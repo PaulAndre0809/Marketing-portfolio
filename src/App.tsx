@@ -4,7 +4,6 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
 import workGif1 from '../a1.gif';
@@ -318,12 +317,14 @@ export default function App() {
                   </div>
                   
                   <div className="order-1 lg:order-2">
-                    <div className="aspect-[4/3] rounded-3xl overflow-hidden relative group">
-                      <img 
-                        src={activeStudy.media}
-                        alt={activeStudy.title}
-                        className="w-full h-full object-cover transition-all duration-700"
-                      />
+                    <div className="group aspect-[4/3] rounded-3xl overflow-hidden relative border border-zinc-200/80 bg-zinc-50">
+                      <div className="flex h-full w-full items-center justify-center p-5 sm:p-8 lg:p-10">
+                        <img 
+                          src={activeStudy.media}
+                          alt={activeStudy.title}
+                          className="max-h-full w-auto max-w-[88%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                        />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
