@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
 import workGif1 from '../a1.gif';
 import workGif2 from '../a2.gif';
-import workGif3 from '../a3.gif';
+import workVideo4 from '../a4.webm';
 import { 
   ArrowRight, 
   BarChart3, 
@@ -43,7 +43,8 @@ const caseStudies = [
     strategy: 'Full-funnel Meta Ads strategy combined with high-intent content and automated lead qualification.',
     results: ['2,579 High-Quality Leads', '1M+ Organic & Paid Views', '35% Reduction in CPL'],
     tags: ['Meta Ads', 'Content Strategy', 'Funnel Optimization'],
-    media: workGif1
+    media: workGif1,
+    mediaType: 'image'
   },
   {
     id: 'we-aspire',
@@ -53,7 +54,8 @@ const caseStudies = [
     strategy: 'Aggressive creative testing and audience segmentation across paid channels.',
     results: ['Consistent Month-over-Month Growth', 'Automated Lead Distribution', 'Enhanced Tracking Accuracy'],
     tags: ['Performance Marketing', 'Lead Generation', 'Scaling'],
-    media: workGif2
+    media: workGif2,
+    mediaType: 'image'
   },
   {
     id: 'automation',
@@ -63,7 +65,8 @@ const caseStudies = [
     strategy: 'Integrated ManyChat, HubSpot, and Zapier to build a self-optimizing lead ecosystem.',
     results: ['Zero Manual Data Entry', 'Instant Lead Response Time', 'Real-time Pipeline Tracking'],
     tags: ['ManyChat', 'CRM', 'Automation'],
-    media: workGif3
+    media: workVideo4,
+    mediaType: 'video'
   }
 ];
 
@@ -319,11 +322,22 @@ export default function App() {
                   <div className="order-1 lg:order-2">
                     <div className="group aspect-[4/3] rounded-3xl overflow-hidden relative border border-zinc-200/80 bg-zinc-50">
                       <div className="flex h-full w-full items-center justify-center p-5 sm:p-8 lg:p-10">
-                        <img 
-                          src={activeStudy.media}
-                          alt={activeStudy.title}
-                          className="max-h-full w-auto max-w-[88%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                        />
+                        {activeStudy.mediaType === 'video' ? (
+                          <video
+                            src={activeStudy.media}
+                            className="max-h-full w-auto max-w-[88%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                          />
+                        ) : (
+                          <img 
+                            src={activeStudy.media}
+                            alt={activeStudy.title}
+                            className="max-h-full w-auto max-w-[88%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                          />
+                        )}
                       </div>
                     </div>
                   </div>
