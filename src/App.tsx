@@ -419,18 +419,18 @@ export default function App() {
               <h2 className="text-5xl md:text-8xl font-bold tracking-tight mb-12">Let's scale <br />your leads.</h2>
               <div className="flex flex-col items-center gap-6">
                 <a 
-                  href="mailto:contact@example.com" 
+                  href="mailto:5.paulandrefutol@gmail.com" 
                   className="text-2xl md:text-4xl font-medium hover:text-zinc-500 transition-colors flex items-center gap-4"
                 >
                   <Mail className="w-8 h-8" />
-                  osamakolachi98@gmail.com
+                  5.paulandrefutol@gmail.com
                 </a>
                 <a 
-                  href="tel:+971000000000" 
+                  href="tel:+971502315266" 
                   className="text-2xl md:text-4xl font-medium hover:text-zinc-500 transition-colors flex items-center gap-4"
                 >
                   <Phone className="w-8 h-8" />
-                  +971 5X XXX XXXX
+                  +971 502315266
                 </a>
               </div>
               <div className="mt-20">
