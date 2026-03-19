@@ -104,14 +104,14 @@ export default function App() {
   const [activeCaseStudy, setActiveCaseStudy] = useState(0);
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-white text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between gap-4">
           <motion.span 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-xl font-bold tracking-tighter"
+            className="max-w-[12rem] sm:max-w-none text-sm sm:text-xl font-bold tracking-tighter leading-tight"
           >
             PAUL ANDRE FUTOL
           </motion.span>
@@ -126,27 +126,33 @@ export default function App() {
               Contact Me
             </a>
           </div>
+          <a 
+            href="#contact" 
+            className="md:hidden px-4 py-2 bg-zinc-900 text-white rounded-full text-xs font-semibold uppercase tracking-wider"
+          >
+            Contact
+          </a>
         </div>
       </nav>
 
       <main>
         {/* Hero Section */}
-        <section className="pt-32 lg:pt-40 pb-16 lg:pb-0 px-6">
+        <section className="pt-28 sm:pt-32 lg:pt-40 pb-16 lg:pb-0 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch min-h-[560px] lg:min-h-[700px]">
-              <div className="max-w-4xl flex items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch min-h-[auto] lg:min-h-[700px]">
+              <div className="max-w-4xl flex items-center order-2 lg:order-1">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-bold uppercase tracking-widest mb-6">
+                  <span className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-[0.24em] mb-5 sm:mb-6">
                     Performance Marketing Specialist
                   </span>
-                  <h1 className="text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] mb-8">
+                  <h1 className="text-4xl sm:text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] mb-6 sm:mb-8 text-balance">
                     I turn ad spend into <span className="text-zinc-400">predictable leads.</span>
                   </h1>
-                  <p className="text-lg md:text-2xl text-zinc-500 max-w-2xl leading-relaxed mb-12">
+                  <p className="text-base sm:text-lg md:text-2xl text-zinc-500 max-w-2xl leading-relaxed mb-8 sm:mb-12">
                     Dubai-based growth expert managing <span className="text-zinc-900 font-medium">AED 96K+</span> in spend to generate over <span className="text-zinc-900 font-medium">15,000+</span> high-intent leads.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
@@ -171,7 +177,7 @@ export default function App() {
                 initial={{ opacity: 0, x: 24 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="relative w-full h-[520px] md:h-[640px] lg:h-full overflow-visible"
+                className="relative order-1 lg:order-2 w-full h-[340px] sm:h-[440px] md:h-[640px] lg:h-full overflow-visible"
               >
                 <div className="w-full h-full rounded-3xl overflow-hidden">
                   <img
@@ -211,8 +217,8 @@ export default function App() {
 
         {/* Metrics Section */}
         <section className="py-20 bg-zinc-50 border-y border-zinc-100">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 md:gap-12">
               {stats.map((stat, index) => (
                 <motion.div 
                   key={index}
@@ -232,12 +238,12 @@ export default function App() {
         </section>
 
         {/* Selected Work Section */}
-        <section id="work" className="py-32 px-6">
+        <section id="work" className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="flex flex-col md:flex-row justify-between md:items-end mb-12 sm:mb-16 lg:mb-20 gap-6 sm:gap-8">
               <div className="max-w-2xl">
-                <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Selected Work</h2>
-                <p className="text-xl text-zinc-500">A look at how I solve complex growth challenges through data and automation.</p>
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-4 sm:mb-6">Selected Work</h2>
+                <p className="text-lg sm:text-xl text-zinc-500">A look at how I solve complex growth challenges through data and automation.</p>
               </div>
               <div className="flex gap-2">
                 {caseStudies.map((_, idx) => (
@@ -250,7 +256,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="relative min-h-[600px]">
+            <div className="relative min-h-[auto] lg:min-h-[600px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeCaseStudy}
@@ -258,18 +264,18 @@ export default function App() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="grid lg:grid-cols-2 gap-16 items-center"
+                  className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center"
                 >
                   <div className="order-2 lg:order-1">
-                    <div className="flex gap-2 mb-6">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {caseStudies[activeCaseStudy].tags.map(tag => (
                         <span key={tag} className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-zinc-100 rounded text-zinc-500">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <h3 className="text-4xl md:text-5xl font-bold mb-4">{caseStudies[activeCaseStudy].title}</h3>
-                    <p className="text-xl text-zinc-400 mb-10 italic">{caseStudies[activeCaseStudy].subtitle}</p>
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">{caseStudies[activeCaseStudy].title}</h3>
+                    <p className="text-lg sm:text-xl text-zinc-400 mb-8 sm:mb-10 italic">{caseStudies[activeCaseStudy].subtitle}</p>
                     
                     <div className="space-y-8">
                       <div>
@@ -312,14 +318,14 @@ export default function App() {
         </section>
 
         {/* Process Section */}
-        <section id="process" className="py-32 px-6 bg-zinc-900 text-white">
+        <section id="process" className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 bg-zinc-900 text-white">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">The Growth System</h2>
-              <p className="text-xl text-zinc-400">A structured approach to turning ad spend into profitable revenue.</p>
+            <div className="max-w-2xl mb-12 sm:mb-16 lg:mb-20">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-4 sm:mb-6">The Growth System</h2>
+              <p className="text-lg sm:text-xl text-zinc-400">A structured approach to turning ad spend into profitable revenue.</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
               {processSteps.map((step, index) => (
                 <motion.div 
                   key={index}
@@ -340,8 +346,8 @@ export default function App() {
         </section>
 
         {/* Tools & Stack */}
-        <section className="py-24 px-6 border-b border-zinc-100 overflow-hidden">
-          <div className="max-w-7xl mx-auto mb-12">
+        <section className="py-20 sm:py-24 px-4 sm:px-6 border-b border-zinc-100 overflow-hidden">
+          <div className="max-w-7xl mx-auto mb-10 sm:mb-12">
             <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-zinc-400 text-center">The Stack & Infrastructure</h2>
           </div>
           
@@ -363,7 +369,7 @@ export default function App() {
                 {[...tools, ...tools, ...tools].map((tool, idx) => (
                   <span 
                     key={idx} 
-                    className="text-2xl md:text-4xl font-bold text-zinc-200 hover:text-zinc-900 transition-colors cursor-default"
+                    className="text-xl sm:text-2xl md:text-4xl font-bold text-zinc-200 hover:text-zinc-900 transition-colors cursor-default"
                   >
                     {tool}
                   </span>
@@ -374,11 +380,11 @@ export default function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-32 px-6">
+        <section id="about" className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-20 items-start">
-              <div className="sticky top-32">
-                <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">Thinking First, <br />Results Always.</h2>
+            <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-start">
+              <div className="lg:sticky lg:top-32">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-6 sm:mb-8">Thinking First, <br />Results Always.</h2>
                 <div className="flex gap-4">
                   <a href="#" className="p-3 rounded-full border border-zinc-200 hover:bg-zinc-50 transition-all">
                     <Linkedin className="w-5 h-5" />
@@ -388,14 +394,14 @@ export default function App() {
                   </a>
                 </div>
               </div>
-              <div className="space-y-12 text-xl md:text-2xl text-zinc-500 leading-relaxed">
+              <div className="space-y-8 sm:space-y-10 lg:space-y-12 text-lg sm:text-xl md:text-2xl text-zinc-500 leading-relaxed">
                 <p>
                   I don't just "run ads." I build automated lead generation systems that work while you sleep. Based in Dubai, I've spent years refining the intersection of <span className="text-zinc-900 font-medium">paid media, creative strategy, and marketing automation.</span>
                 </p>
                 <p>
                   My approach is rooted in data but driven by human psychology. I focus on the metrics that actually matter: <span className="text-zinc-900 font-medium">Cost Per Lead, Lead Quality, and ROI.</span>
                 </p>
-                <div className="pt-8 grid sm:grid-cols-2 gap-12">
+                <div className="pt-4 sm:pt-8 grid sm:grid-cols-2 gap-8 sm:gap-12">
                   {testimonials.map((t, i) => (
                     <div key={i} className="space-y-4">
                       <p className="text-lg italic text-zinc-600">"{t.quote}"</p>
@@ -409,31 +415,31 @@ export default function App() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-40 px-6 bg-zinc-50">
+        <section id="contact" className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 bg-zinc-50">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl md:text-8xl font-bold tracking-tight mb-12">Let's scale <br />your leads.</h2>
-              <div className="flex flex-col items-center gap-6">
+              <h2 className="text-4xl sm:text-5xl md:text-8xl font-bold tracking-tight mb-10 sm:mb-12">Let's scale <br />your leads.</h2>
+              <div className="flex flex-col items-center gap-5 sm:gap-6">
                 <a 
                   href="mailto:5.paulandrefutol@gmail.com" 
-                  className="text-2xl md:text-4xl font-medium hover:text-zinc-500 transition-colors flex items-center gap-4"
+                  className="max-w-full text-base sm:text-2xl md:text-4xl font-medium hover:text-zinc-500 transition-colors flex flex-col sm:flex-row items-center gap-3 sm:gap-4 break-all"
                 >
-                  <Mail className="w-8 h-8" />
+                  <Mail className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0" />
                   5.paulandrefutol@gmail.com
                 </a>
                 <a 
                   href="tel:+971502315266" 
-                  className="text-2xl md:text-4xl font-medium hover:text-zinc-500 transition-colors flex items-center gap-4"
+                  className="text-lg sm:text-2xl md:text-4xl font-medium hover:text-zinc-500 transition-colors flex flex-col sm:flex-row items-center gap-3 sm:gap-4"
                 >
-                  <Phone className="w-8 h-8" />
+                  <Phone className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0" />
                   +971 502315266
                 </a>
               </div>
-              <div className="mt-20">
+              <div className="mt-14 sm:mt-20">
                 <p className="text-zinc-400 text-sm uppercase tracking-[0.4em] font-bold mb-8">Dubai, UAE</p>
                 <div className="w-px h-24 bg-zinc-200 mx-auto" />
               </div>
@@ -442,10 +448,10 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="py-12 px-6 border-t border-zinc-100">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-zinc-400 font-medium">
+      <footer className="py-10 sm:py-12 px-4 sm:px-6 border-t border-zinc-100">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-center md:text-left text-sm text-zinc-400 font-medium">
           <p>© 2026 Paul Andre Futol. All rights reserved.</p>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
             <a href="#" className="hover:text-zinc-900 transition-colors">LinkedIn</a>
             <a href="#" className="hover:text-zinc-900 transition-colors">Instagram</a>
             <a href="#" className="hover:text-zinc-900 transition-colors">Privacy</a>
