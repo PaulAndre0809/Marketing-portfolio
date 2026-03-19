@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
 import { 
@@ -111,6 +112,7 @@ const testimonials = [
 
 export default function App() {
   const [activeCaseStudy, setActiveCaseStudy] = useState(0);
+  const activeStudy = caseStudies[activeCaseStudy];
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white">
@@ -277,28 +279,28 @@ export default function App() {
                 >
                   <div className="order-2 lg:order-1">
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {caseStudies[activeCaseStudy].tags.map(tag => (
+                      {activeStudy.tags.map(tag => (
                         <span key={tag} className="text-[10px] uppercase tracking-widest font-bold px-2 py-1 bg-zinc-100 rounded text-zinc-500">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">{caseStudies[activeCaseStudy].title}</h3>
-                    <p className="text-lg sm:text-xl text-zinc-400 mb-8 sm:mb-10 italic">{caseStudies[activeCaseStudy].subtitle}</p>
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">{activeStudy.title}</h3>
+                    <p className="text-lg sm:text-xl text-zinc-400 mb-8 sm:mb-10 italic">{activeStudy.subtitle}</p>
                     
                     <div className="space-y-8">
                       <div>
                         <h4 className="text-xs uppercase tracking-widest font-bold text-zinc-900 mb-2">Problem</h4>
-                        <p className="text-zinc-600 leading-relaxed">{caseStudies[activeCaseStudy].problem}</p>
+                        <p className="text-zinc-600 leading-relaxed">{activeStudy.problem}</p>
                       </div>
                       <div>
                         <h4 className="text-xs uppercase tracking-widest font-bold text-zinc-900 mb-2">Strategy</h4>
-                        <p className="text-zinc-600 leading-relaxed">{caseStudies[activeCaseStudy].strategy}</p>
+                        <p className="text-zinc-600 leading-relaxed">{activeStudy.strategy}</p>
                       </div>
                       <div>
                         <h4 className="text-xs uppercase tracking-widest font-bold text-zinc-900 mb-4">Results</h4>
                         <ul className="space-y-3">
-                          {caseStudies[activeCaseStudy].results.map((result, i) => (
+                          {activeStudy.results.map((result, i) => (
                             <li key={i} className="flex items-center gap-3 text-zinc-900 font-medium">
                               <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                               {result}
@@ -311,13 +313,26 @@ export default function App() {
                   
                   <div className="order-1 lg:order-2">
                     <div className="aspect-[4/3] bg-zinc-100 rounded-3xl overflow-hidden relative group">
-                      <img 
-                        src={`https://picsum.photos/seed/${caseStudies[activeCaseStudy].id}/1200/900`}
-                        alt={caseStudies[activeCaseStudy].title}
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute inset-0 bg-zinc-900/10 group-hover:bg-transparent transition-colors" />
+                      {activeStudy.id === 'automation' ? (
+                        <div className="w-full h-full bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950 p-4 sm:p-6">
+                          <DotLottieReact
+                            src="https://lottie.host/cff4a690-9fce-4272-80e9-ead239cdf5d4/gz8YiEYNrR.lottie"
+                            loop
+                            autoplay
+                            className="w-full h-full"
+                          />
+                        </div>
+                      ) : (
+                        <>
+                          <img 
+                            src={`https://picsum.photos/seed/${activeStudy.id}/1200/900`}
+                            alt={activeStudy.title}
+                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            referrerPolicy="no-referrer"
+                          />
+                          <div className="absolute inset-0 bg-zinc-900/10 group-hover:bg-transparent transition-colors" />
+                        </>
+                      )}
                     </div>
                   </div>
                 </motion.div>
