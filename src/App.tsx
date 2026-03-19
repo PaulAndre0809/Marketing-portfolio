@@ -6,9 +6,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
-import workGif1 from '../a1.gif';
-import workGif2 from '../a2.gif';
-import workVideo4 from '../a4.webm';
 import { 
   ArrowRight, 
   BarChart3, 
@@ -42,9 +39,7 @@ const caseStudies = [
     problem: 'High CPL and inconsistent lead quality in a niche market.',
     strategy: 'Full-funnel Meta Ads strategy combined with high-intent content and automated lead qualification.',
     results: ['2,579 High-Quality Leads', '1M+ Organic & Paid Views', '35% Reduction in CPL'],
-    tags: ['Meta Ads', 'Content Strategy', 'Funnel Optimization'],
-    media: workGif1,
-    mediaType: 'image'
+    tags: ['Meta Ads', 'Content Strategy', 'Funnel Optimization']
   },
   {
     id: 'we-aspire',
@@ -53,9 +48,7 @@ const caseStudies = [
     problem: 'Need for rapid scaling of lead volume while maintaining strict ROI targets.',
     strategy: 'Aggressive creative testing and audience segmentation across paid channels.',
     results: ['Consistent Month-over-Month Growth', 'Automated Lead Distribution', 'Enhanced Tracking Accuracy'],
-    tags: ['Performance Marketing', 'Lead Generation', 'Scaling'],
-    media: workGif2,
-    mediaType: 'image'
+    tags: ['Performance Marketing', 'Lead Generation', 'Scaling']
   },
   {
     id: 'automation',
@@ -64,11 +57,35 @@ const caseStudies = [
     problem: 'Manual lead handling causing delays and drop-offs in the sales pipeline.',
     strategy: 'Integrated ManyChat, HubSpot, and Zapier to build a self-optimizing lead ecosystem.',
     results: ['Zero Manual Data Entry', 'Instant Lead Response Time', 'Real-time Pipeline Tracking'],
-    tags: ['ManyChat', 'CRM', 'Automation'],
-    media: workVideo4,
-    mediaType: 'video'
+    tags: ['ManyChat', 'CRM', 'Automation']
   }
 ];
+
+const studyThemes: Record<string, {
+  gradient: string;
+  glow: string;
+  ring: string;
+  accent: string;
+}> = {
+  gilani: {
+    gradient: 'from-sky-500 via-cyan-500 to-blue-700',
+    glow: 'bg-cyan-300/40',
+    ring: 'ring-cyan-200/60',
+    accent: 'text-cyan-100'
+  },
+  'we-aspire': {
+    gradient: 'from-emerald-500 via-teal-500 to-lime-600',
+    glow: 'bg-emerald-300/40',
+    ring: 'ring-emerald-200/60',
+    accent: 'text-emerald-100'
+  },
+  automation: {
+    gradient: 'from-violet-500 via-fuchsia-500 to-rose-600',
+    glow: 'bg-violet-300/40',
+    ring: 'ring-violet-200/60',
+    accent: 'text-violet-100'
+  }
+};
 
 const processSteps = [
   {
@@ -121,6 +138,10 @@ const testimonials = [
 export default function App() {
   const [activeCaseStudy, setActiveCaseStudy] = useState(0);
   const activeStudy = caseStudies[activeCaseStudy];
+  const activeTheme = studyThemes[activeStudy.id] ?? studyThemes.gilani;
+
+  const summarize = (text: string, maxChars: number) =>
+    text.length > maxChars ? `${text.slice(0, maxChars - 1)}...` : text;
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white text-zinc-900 font-sans selection:bg-zinc-900 selection:text-white">
@@ -320,24 +341,60 @@ export default function App() {
                   </div>
                   
                   <div className="order-1 lg:order-2">
-                    <div className="group aspect-[4/3] rounded-3xl overflow-hidden relative border border-zinc-200/80 bg-zinc-50">
-                      <div className={`flex h-full w-full items-center justify-center ${activeStudy.mediaType === 'video' ? 'p-2 sm:p-3 lg:p-4' : 'p-5 sm:p-8 lg:p-10'}`}>
-                        {activeStudy.mediaType === 'video' ? (
-                          <video
-                            src={activeStudy.media}
-                            className="max-h-full w-auto max-w-[98%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                          />
-                        ) : (
-                          <img 
-                            src={activeStudy.media}
-                            alt={activeStudy.title}
-                            className="max-h-full w-auto max-w-[88%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                          />
-                        )}
+                    <div className={`aspect-[4/3] rounded-3xl overflow-hidden relative bg-gradient-to-br ${activeTheme.gradient}`}>
+                      <div className={`absolute -top-10 -right-10 h-44 w-44 rounded-full blur-3xl ${activeTheme.glow}`} />
+                      <div className={`absolute -bottom-12 -left-10 h-48 w-48 rounded-full blur-3xl ${activeTheme.glow}`} />
+
+                      <div className="relative h-full p-5 sm:p-6 lg:p-7 text-white">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold text-white/80">Case Architecture</span>
+                          <span className={`text-xs sm:text-sm font-semibold ${activeTheme.accent}`}>Live Blueprint</span>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-2 sm:gap-3 text-[10px] sm:text-xs mb-5">
+                          {activeStudy.tags.map((tag) => (
+                            <div key={tag} className={`rounded-xl bg-white/15 backdrop-blur-sm ring-1 ${activeTheme.ring} px-2 py-2 text-center font-semibold`}>
+                              {tag}
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-3 sm:gap-4 items-start">
+                          <div className="rounded-2xl bg-white/12 ring-1 ring-white/30 p-3 sm:p-4">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Target className="w-4 h-4" />
+                              <span className="text-[10px] sm:text-xs uppercase tracking-wider font-bold">Problem</span>
+                            </div>
+                            <p className="text-[11px] sm:text-xs text-white/85 leading-relaxed">{summarize(activeStudy.problem, 62)}</p>
+                          </div>
+
+                          <div className="rounded-2xl bg-white/12 ring-1 ring-white/30 p-3 sm:p-4">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Layers className="w-4 h-4" />
+                              <span className="text-[10px] sm:text-xs uppercase tracking-wider font-bold">Strategy</span>
+                            </div>
+                            <p className="text-[11px] sm:text-xs text-white/85 leading-relaxed">{summarize(activeStudy.strategy, 62)}</p>
+                          </div>
+
+                          <div className="rounded-2xl bg-white/12 ring-1 ring-white/30 p-3 sm:p-4">
+                            <div className="flex items-center gap-2 mb-2">
+                              <TrendingUp className="w-4 h-4" />
+                              <span className="text-[10px] sm:text-xs uppercase tracking-wider font-bold">Results</span>
+                            </div>
+                            <div className="space-y-2">
+                              {activeStudy.results.map((result) => (
+                                <div key={result} className="rounded-lg bg-white/15 px-2 py-1.5 text-[10px] sm:text-[11px] font-semibold leading-snug">
+                                  {result}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="mt-4 sm:mt-5 flex items-center gap-2 text-[10px] sm:text-xs font-semibold text-white/85">
+                          <span className="inline-block w-2 h-2 rounded-full bg-lime-300" />
+                          Conversion system active and optimized for scale.
+                        </div>
                       </div>
                     </div>
                   </div>
