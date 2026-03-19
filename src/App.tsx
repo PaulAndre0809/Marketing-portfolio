@@ -312,9 +312,9 @@ export default function App() {
                   </div>
                   
                   <div className="order-1 lg:order-2">
-                    <div className="aspect-[4/3] bg-zinc-100 rounded-3xl overflow-hidden relative group">
+                    <div className="aspect-[4/3] rounded-3xl overflow-hidden relative group">
                       {activeStudy.id === 'automation' ? (
-                        <div className="w-full h-full bg-gradient-to-br from-zinc-950 via-zinc-900 to-cyan-950 p-4 sm:p-6">
+                        <div className="w-full h-full p-4 sm:p-6">
                           <DotLottieReact
                             src="https://lottie.host/cff4a690-9fce-4272-80e9-ead239cdf5d4/gz8YiEYNrR.lottie"
                             loop
