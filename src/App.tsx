@@ -321,11 +321,11 @@ export default function App() {
                   
                   <div className="order-1 lg:order-2">
                     <div className="group aspect-[4/3] rounded-3xl overflow-hidden relative border border-zinc-200/80 bg-zinc-50">
-                      <div className="flex h-full w-full items-center justify-center p-5 sm:p-8 lg:p-10">
+                      <div className={`flex h-full w-full items-center justify-center ${activeStudy.mediaType === 'video' ? 'p-2 sm:p-3 lg:p-4' : 'p-5 sm:p-8 lg:p-10'}`}>
                         {activeStudy.mediaType === 'video' ? (
                           <video
                             src={activeStudy.media}
-                            className="max-h-full w-auto max-w-[88%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                            className="max-h-full w-auto max-w-[98%] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                             autoPlay
                             loop
                             muted
