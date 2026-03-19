@@ -7,6 +7,9 @@ import React, { useState, useEffect } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
+import workGif1 from '../a1.gif';
+import workGif2 from '../a2.gif';
+import workGif3 from '../a3.gif';
 import { 
   ArrowRight, 
   BarChart3, 
@@ -40,7 +43,8 @@ const caseStudies = [
     problem: 'High CPL and inconsistent lead quality in a niche market.',
     strategy: 'Full-funnel Meta Ads strategy combined with high-intent content and automated lead qualification.',
     results: ['2,579 High-Quality Leads', '1M+ Organic & Paid Views', '35% Reduction in CPL'],
-    tags: ['Meta Ads', 'Content Strategy', 'Funnel Optimization']
+    tags: ['Meta Ads', 'Content Strategy', 'Funnel Optimization'],
+    media: workGif1
   },
   {
     id: 'we-aspire',
@@ -49,7 +53,8 @@ const caseStudies = [
     problem: 'Need for rapid scaling of lead volume while maintaining strict ROI targets.',
     strategy: 'Aggressive creative testing and audience segmentation across paid channels.',
     results: ['Consistent Month-over-Month Growth', 'Automated Lead Distribution', 'Enhanced Tracking Accuracy'],
-    tags: ['Performance Marketing', 'Lead Generation', 'Scaling']
+    tags: ['Performance Marketing', 'Lead Generation', 'Scaling'],
+    media: workGif2
   },
   {
     id: 'automation',
@@ -58,7 +63,8 @@ const caseStudies = [
     problem: 'Manual lead handling causing delays and drop-offs in the sales pipeline.',
     strategy: 'Integrated ManyChat, HubSpot, and Zapier to build a self-optimizing lead ecosystem.',
     results: ['Zero Manual Data Entry', 'Instant Lead Response Time', 'Real-time Pipeline Tracking'],
-    tags: ['ManyChat', 'CRM', 'Automation']
+    tags: ['ManyChat', 'CRM', 'Automation'],
+    media: workGif3
   }
 ];
 
@@ -313,26 +319,11 @@ export default function App() {
                   
                   <div className="order-1 lg:order-2">
                     <div className="aspect-[4/3] rounded-3xl overflow-hidden relative group">
-                      {activeStudy.id === 'automation' ? (
-                        <div className="w-full h-full p-4 sm:p-6">
-                          <DotLottieReact
-                            src="https://lottie.host/cff4a690-9fce-4272-80e9-ead239cdf5d4/gz8YiEYNrR.lottie"
-                            loop
-                            autoplay
-                            className="w-full h-full"
-                          />
-                        </div>
-                      ) : (
-                        <>
-                          <img 
-                            src={`https://picsum.photos/seed/${activeStudy.id}/1200/900`}
-                            alt={activeStudy.title}
-                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                            referrerPolicy="no-referrer"
-                          />
-                          <div className="absolute inset-0 bg-zinc-900/10 group-hover:bg-transparent transition-colors" />
-                        </>
-                      )}
+                      <img 
+                        src={activeStudy.media}
+                        alt={activeStudy.title}
+                        className="w-full h-full object-cover transition-all duration-700"
+                      />
                     </div>
                   </div>
                 </motion.div>
