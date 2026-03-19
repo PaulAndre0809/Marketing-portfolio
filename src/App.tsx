@@ -89,6 +89,15 @@ const tools = [
   'HubSpot', 'Zapier', 'WordPress', 'Canva', 'Adobe Suite'
 ];
 
+const stackAccentClasses = [
+  'hover:text-sky-500 hover:[text-shadow:0_0_28px_rgba(14,165,233,0.35)]',
+  'hover:text-emerald-500 hover:[text-shadow:0_0_28px_rgba(16,185,129,0.35)]',
+  'hover:text-amber-500 hover:[text-shadow:0_0_28px_rgba(245,158,11,0.35)]',
+  'hover:text-rose-500 hover:[text-shadow:0_0_28px_rgba(244,63,94,0.35)]',
+  'hover:text-violet-500 hover:[text-shadow:0_0_28px_rgba(139,92,246,0.35)]',
+  'hover:text-cyan-500 hover:[text-shadow:0_0_28px_rgba(6,182,212,0.35)]'
+];
+
 const testimonials = [
   {
     quote: "Paul transformed our lead generation. Our CPL dropped significantly within the first month.",
@@ -369,7 +378,7 @@ export default function App() {
                 {[...tools, ...tools, ...tools].map((tool, idx) => (
                   <span 
                     key={idx} 
-                    className="text-xl sm:text-2xl md:text-4xl font-bold text-zinc-200 hover:text-zinc-900 transition-colors cursor-default"
+                    className={`text-xl sm:text-2xl md:text-4xl font-bold text-zinc-200 transition-all duration-300 cursor-default hover:-translate-y-1 ${stackAccentClasses[idx % stackAccentClasses.length]}`}
                   >
                     {tool}
                   </span>
