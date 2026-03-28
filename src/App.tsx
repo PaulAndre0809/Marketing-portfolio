@@ -4,7 +4,6 @@
  */
 
 import React, { useState } from 'react';
-import { Analytics } from "@vercel/analytics/react"
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
 import a1 from '../a1.gif';
