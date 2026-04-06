@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
-import resumePdf from '../Paul_Andre_Futol_Resume_Final.pdf';
+import resumePdf from '../Paul_Andre_Futol_CV_Complete.pdf';
 import a1 from '../a1.gif';
 import a2 from '../a2.gif';
 import a3 from '../a3.gif';
@@ -250,7 +250,7 @@ export default function App() {
                     </a>
                     <a
                       href={resumePdf}
-                      download="Paul_Andre_Futol_Resume_Final.pdf"
+                      download="Paul_Andre_Futol_CV_Complete.pdf"
                       className="px-7 py-3.5 border border-zinc-200 rounded-full font-semibold flex items-center justify-center hover:bg-zinc-50 transition-all text-sm"
                     >
                       ↓ Download CV
