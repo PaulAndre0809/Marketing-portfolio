@@ -250,7 +250,7 @@ export default function App() {
                     </a>
                     <a
                       href={resumePdf}
-                      download="Paul_Andre_Futol_CV_Complete.pdf"
+                      download="Paul_Andre_Futol_Resume_Final.pdf"
                       className="px-7 py-3.5 border border-zinc-200 rounded-full font-semibold flex items-center justify-center hover:bg-zinc-50 transition-all text-sm"
                     >
                       ↓ Download CV
