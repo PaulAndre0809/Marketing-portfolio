@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
-import resumePdf from '../Paul_Andre_Futol_CV_Complete.pdf';
+import resumePdf from '../Paul_Andre_Futol_Resume_Final.pdf';
 import a1 from '../a1.gif';
 import a2 from '../a2.gif';
 import a3 from '../a3.gif';
