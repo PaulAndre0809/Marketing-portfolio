@@ -145,9 +145,9 @@ const caseStudies = [
     title: 'Funnel & Automation',
     subtitle: 'Bilingual lead qualification at zero manual effort',
     problem:
-      'Manual lead handling across 6 brands caused slow response times and pipeline blind spots — Arabic-speaking prospects were especially underserved.',
+      'Manual lead handling caused slow response times and pipeline blind spots — Arabic-speaking prospects were especially underserved.',
     solution:
-      'Built a bilingual EN/AR ManyChat chatflow connected to HubSpot and WhatsApp API. Automated segmentation by service type, instant routing to the right sales rep, and a Looker Studio dashboard giving the team full pipeline visibility from source to closed sale.',
+      'Built a bilingual EN/AR ManyChat chatflow connected to WhatsApp API. Automated segmentation by service type, instant routing to the right sales rep, and a Looker Studio dashboard giving the team full pipeline visibility from source to closed sale.',
     results: [
       '408 sends · 371 unique contacts · live in 3 weeks',
       'Sub-2-min automated response time across all 6 brands',
