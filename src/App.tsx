@@ -347,7 +347,7 @@ export default function App() {
                   </span>
 
                   <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-bold tracking-tight leading-[0.95] mb-5 sm:mb-7 text-balance">
-                    Marketing systems that bring in leads — and turn them into{' '}
+                    Marketing systems that bring in leads and turn them into{' '}
                     <span className="text-zinc-400">customers.</span>
                   </h1>
 
