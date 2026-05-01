@@ -22,9 +22,7 @@ import {
   MousePointer2,
   Cpu,
   MessageCircle,
-  Calendar,
   Star,
-  ChevronRight,
 } from 'lucide-react';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -71,7 +69,7 @@ const stats = [
 const services = [
   {
     number: '01',
-    title: 'Lead Generation',
+    title: 'Lead Generation & Paid Ads',
     description:
       'Meta Ads campaign setup, audience targeting, funnel optimization, and creative testing — built to bring in qualified leads at the lowest possible cost.',
     result: 'More qualified leads, lower CPL',
@@ -80,7 +78,16 @@ const services = [
   },
   {
     number: '02',
-    title: 'Lead Handling Systems',
+    title: 'Email Marketing Strategy',
+    description:
+      'End-to-end email campaign planning and execution — from audience segmentation, trigger-based flows, and scheduling to A/B testing subject lines and creatives that lift open rates and drive conversions.',
+    result: 'Higher open rates, measurable revenue',
+    tools: ['Brevo', 'Mailchimp', 'HubSpot', 'A/B Testing', 'Segmentation'],
+    accent: 'from-rose-500 to-pink-600',
+  },
+  {
+    number: '03',
+    title: 'Lead Handling & Automation',
     description:
       'CRM setup, WhatsApp API, and ManyChat automation flows that instantly capture, qualify, and route leads — so no prospect falls through the cracks.',
     result: 'Faster response, zero missed leads',
@@ -88,7 +95,7 @@ const services = [
     accent: 'from-emerald-500 to-teal-600',
   },
   {
-    number: '03',
+    number: '04',
     title: 'Content & Creative',
     description:
       'Reels, Stories, ad creatives, and event productions built to stop the scroll and drive action — across multiple brands simultaneously.',
@@ -97,7 +104,7 @@ const services = [
     accent: 'from-amber-500 to-orange-600',
   },
   {
-    number: '04',
+    number: '05',
     title: 'Tracking & Optimisation',
     description:
       'GA4, Looker Studio, and Meta Ads Manager dashboards that turn raw data into clear decisions — from killing underperformers to doubling down on winners.',
@@ -145,9 +152,9 @@ const caseStudies = [
     title: 'Funnel & Automation',
     subtitle: 'Bilingual lead qualification at zero manual effort',
     problem:
-      'Manual lead handling caused slow response times and pipeline blind spots — Arabic-speaking prospects were especially underserved.',
+      'Manual lead handling across 6 brands caused slow response times and pipeline blind spots — Arabic-speaking prospects were especially underserved.',
     solution:
-      'Built a bilingual EN/AR ManyChat chatflow connected to WhatsApp API. Automated segmentation by service type, instant routing to the right sales rep, and a Looker Studio dashboard giving the team full pipeline visibility from source to closed sale.',
+      'Built a bilingual EN/AR ManyChat chatflow connected to HubSpot and WhatsApp API. Automated segmentation by service type, instant routing to the right sales rep, and a Looker Studio dashboard giving the team full pipeline visibility from source to closed sale.',
     results: [
       '408 sends · 371 unique contacts · live in 3 weeks',
       'Sub-2-min automated response time across all 6 brands',
@@ -155,6 +162,22 @@ const caseStudies = [
       'Full pipeline visibility: source → lead → closed sale',
     ],
     tags: ['ManyChat', 'WhatsApp API', 'HubSpot', 'Looker Studio'],
+  },
+  {
+    id: 'fullbeauty',
+    title: 'Fullbeauty Brands',
+    subtitle: 'Email marketing at enterprise scale — 3 years, zero missed sends',
+    problem:
+      'A portfolio of US plus-size fashion e-commerce brands needed high-volume, on-schedule email campaigns that converted across diverse customer segments — with zero tolerance for deployment errors and constant pressure to improve open rates and revenue per send.',
+    solution:
+      'Managed end-to-end campaign execution using Epsilon as the CRM platform — building audience segments, configuring trigger-based automated flows (cart abandonment, re-engagement, lifecycle nurturing), scheduling across the full send calendar, and running systematic A/B tests on subject lines and creatives to identify what moved the needle per brand and product line.',
+    results: [
+      '100% on-time deployment across all campaigns — zero missed sends over 3 years',
+      '15% increase in email open rates through subject line A/B testing & segmentation',
+      'Trigger-based flows built for cart abandonment, re-engagement & lifecycle nurturing',
+      'Personalized multi-product-line campaigns driving consistent conversion lifts',
+    ],
+    tags: ['Email Marketing', 'Epsilon CRM', 'A/B Testing', 'Segmentation'],
   },
 ];
 
@@ -176,6 +199,12 @@ const studyThemes: Record<string, { gradient: string; glow: string; ring: string
     glow: 'bg-violet-300/40',
     ring: 'ring-violet-200/60',
     accent: 'text-violet-100',
+  },
+  fullbeauty: {
+    gradient: 'from-rose-500 via-pink-500 to-fuchsia-700',
+    glow: 'bg-rose-300/40',
+    ring: 'ring-rose-200/60',
+    accent: 'text-rose-100',
   },
 };
 
@@ -203,51 +232,6 @@ const processSteps = [
     description:
       'GA4, Looker Studio, and Meta Ads Manager data drives every decision — from killing underperformers to doubling down on winners.',
     icon: <TrendingUp className="w-6 h-6" />,
-  },
-];
-
-const pricingPlans = [
-  {
-    name: 'Lead System Setup',
-    type: 'One-Time',
-    description: 'Perfect for businesses that need a solid foundation — ads, automation, and CRM wired together and ready to run.',
-    includes: [
-      'Meta Ads campaign setup & launch',
-      'ManyChat / WhatsApp automation flow',
-      'CRM integration & pipeline setup',
-      'Looker Studio performance dashboard',
-      '30-day post-launch support',
-    ],
-    cta: 'Get Started',
-    highlight: false,
-  },
-  {
-    name: 'Monthly Growth Support',
-    type: 'Monthly Retainer',
-    description: 'Ongoing ads management, creative testing, and reporting so your campaigns keep improving month after month.',
-    includes: [
-      'Meta Ads management & optimisation',
-      'Weekly creative testing & refresh',
-      'Monthly performance report',
-      'Automation maintenance & updates',
-      'Direct WhatsApp access',
-    ],
-    cta: 'Book a Call',
-    highlight: true,
-  },
-  {
-    name: 'Full Marketing System',
-    type: 'Premium Partnership',
-    description: 'Ads + content + automation + reporting — the complete stack for businesses serious about scaling their lead pipeline.',
-    includes: [
-      'Everything in Monthly Growth Support',
-      'Social media content & Reels',
-      'Multi-platform ad management',
-      'Full funnel build & optimisation',
-      'Dedicated account management',
-    ],
-    cta: 'Let\'s Talk',
-    highlight: false,
   },
 ];
 
@@ -304,7 +288,6 @@ export default function App() {
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-500">
             <a href="#work"      className="hover:text-zinc-900 transition-colors">Work</a>
             <a href="#services"  className="hover:text-zinc-900 transition-colors">Services</a>
-            <a href="#pricing"   className="hover:text-zinc-900 transition-colors">Work With Me</a>
             <a href="#about"     className="hover:text-zinc-900 transition-colors">About</a>
             <a
               href="https://wa.me/971502315266"
@@ -347,7 +330,7 @@ export default function App() {
                   </span>
 
                   <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-bold tracking-tight leading-[0.95] mb-5 sm:mb-7 text-balance">
-                    Marketing systems that bring in leads and turn them into{' '}
+                    Marketing systems that bring in leads — and turn them into{' '}
                     <span className="text-zinc-400">customers.</span>
                   </h1>
 
@@ -474,7 +457,7 @@ export default function App() {
                 Every service is built around one thing: measurable outcomes. Not tools. Not tasks. Results.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, i) => (
                 <motion.div
                   key={i}
@@ -699,79 +682,6 @@ export default function App() {
                 ))}
               </motion.div>
             </div>
-          </div>
-        </section>
-
-        {/* ── WORK WITH ME (PRICING) ── */}
-        <section id="pricing" className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 bg-zinc-50 border-b border-zinc-100">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-12 sm:mb-16">
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-zinc-400">Work With Me</span>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mt-3 mb-4">
-                Let's build your <span className="text-zinc-400">lead system.</span>
-              </h2>
-              <p className="text-lg sm:text-xl text-zinc-500">
-                Three ways to work together — depending on where you are and what you need.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {pricingPlans.map((plan, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`relative flex flex-col p-7 sm:p-8 rounded-3xl border transition-all duration-300 ${
-                    plan.highlight
-                      ? 'bg-zinc-900 border-zinc-800 text-white shadow-2xl scale-[1.02]'
-                      : 'bg-white border-zinc-200 hover:border-zinc-300 hover:shadow-lg'
-                  }`}
-                >
-                  {plan.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="px-4 py-1.5 rounded-full bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-                  <div className="mb-6">
-                    <span className={`text-[10px] uppercase tracking-widest font-bold mb-2 block ${plan.highlight ? 'text-zinc-400' : 'text-zinc-400'}`}>
-                      {plan.type}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-bold">{plan.name}</h3>
-                  </div>
-                  <p className={`text-sm leading-relaxed mb-7 ${plan.highlight ? 'text-zinc-400' : 'text-zinc-500'}`}>
-                    {plan.description}
-                  </p>
-                  <ul className="space-y-3 mb-8 flex-1">
-                    {plan.includes.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3">
-                        <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-emerald-400' : 'text-emerald-500'}`} />
-                        <span className={`text-sm ${plan.highlight ? 'text-zinc-300' : 'text-zinc-600'}`}>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="https://wa.me/971502315266"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold text-sm transition-all ${
-                      plan.highlight
-                        ? 'bg-white text-zinc-900 hover:bg-zinc-100'
-                        : 'bg-zinc-900 text-white hover:bg-zinc-700'
-                    }`}
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    {plan.cta}
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-            <p className="text-center text-sm text-zinc-400 mt-8">
-              Not sure which fits? Message me on WhatsApp — I'll tell you exactly what you need.
-            </p>
           </div>
         </section>
 
