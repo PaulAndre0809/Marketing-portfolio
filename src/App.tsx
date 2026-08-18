@@ -148,20 +148,20 @@ const caseStudies = [
     tags: ['Meta Ads', 'Lead Generation', 'ManyChat', 'CRM'],
   },
   {
-    id: 'automation',
-    title: 'Funnel & Automation',
-    subtitle: 'Bilingual lead qualification at zero manual effort',
+    id: 'us-client',
+    title: 'US-Based Client',
+    subtitle: 'Email marketing specialist for a US client',
     problem:
-      'Manual lead handling across 6 brands caused slow response times and pipeline blind spots — Arabic-speaking prospects were especially underserved.',
+      'A US-based client needed a reliable email marketing partner to improve campaign execution, customer engagement, and conversion performance across key lifecycle communications.',
     solution:
-      'Built a bilingual EN/AR ManyChat chatflow connected to HubSpot and WhatsApp API. Automated segmentation by service type, instant routing to the right sales rep, and a Looker Studio dashboard giving the team full pipeline visibility from source to closed sale.',
+      'Worked as an Email Marketing Specialist managing campaign setup, audience segmentation, automated flows, and performance optimization — making sure messages were sent on time, tailored to the right audience, and aligned with conversion goals.',
     results: [
-      '408 sends · 371 unique contacts · live in 3 weeks',
-      'Sub-2-min automated response time across all 6 brands',
-      '175K website users tracked in GA4 · 1m 03s avg. engagement',
-      'Full pipeline visibility: source → lead → closed sale',
+      'Built and managed email campaigns for a US-based client with a strong emphasis on audience targeting and timing',
+      'Improved campaign quality through segmentation, testing, and lifecycle email optimization',
+      'Supported lead nurturing and re-engagement efforts with more structured customer journeys',
+      'Helped streamline communication workflows for better engagement and conversion opportunities',
     ],
-    tags: ['ManyChat', 'WhatsApp API', 'HubSpot', 'Looker Studio'],
+    tags: ['Email Marketing', 'Segmentation', 'Lifecycle Emails', 'Campaign Optimization'],
   },
   {
     id: 'fullbeauty',
@@ -194,8 +194,8 @@ const studyThemes: Record<string, { gradient: string; glow: string; ring: string
     ring: 'ring-emerald-200/60',
     accent: 'text-emerald-100',
   },
-  automation: {
-    gradient: 'from-violet-500 via-fuchsia-500 to-rose-600',
+  'us-client': {
+    gradient: 'from-indigo-500 via-violet-500 to-purple-700',
     glow: 'bg-violet-300/40',
     ring: 'ring-violet-200/60',
     accent: 'text-violet-100',
@@ -290,17 +290,17 @@ export default function App() {
             <a href="#services"  className="hover:text-zinc-900 transition-colors">Services</a>
             <a href="#about"     className="hover:text-zinc-900 transition-colors">About</a>
             <a
-              href="https://wa.me/971502315266"
+              href="https://viber.click/639499315451"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-zinc-900 text-white rounded-full hover:bg-zinc-700 transition-all text-sm flex items-center gap-2"
             >
               <MessageCircle className="w-3.5 h-3.5" />
-              WhatsApp Me
+              Viber Me
             </a>
           </div>
           <a
-            href="https://wa.me/971502315266"
+            href="https://viber.click/639499315451"
             target="_blank"
             rel="noopener noreferrer"
             className="md:hidden px-4 py-2 bg-zinc-900 text-white rounded-full text-xs font-semibold uppercase tracking-wider"
@@ -326,7 +326,7 @@ export default function App() {
                   className="max-w-xl"
                 >
                   <span className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-[0.24em] mb-5 sm:mb-6">
-                    Social Media &amp; Marketing Specialist · Dubai, UAE
+                    Social Media &amp; Marketing Specialist · Philippines
                   </span>
 
                   <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-bold tracking-tight leading-[0.95] mb-5 sm:mb-7 text-balance">
@@ -337,9 +337,9 @@ export default function App() {
                   <p className="text-base sm:text-lg text-zinc-500 leading-relaxed mb-4 sm:mb-5">
                     I help businesses run ads, automate lead follow-up, and track performance so{' '}
                     <span className="text-zinc-900 font-semibold">nothing slips through the cracks.</span>{' '}
-                    Currently managing{' '}
+                    Previously managed{' '}
                     <span className="text-zinc-900 font-semibold">6 brands across UAE, Australia, and New Zealand</span>{' '}
-                    — with 15,675+ leads generated at AED 6.16 avg. CPL.
+                    — generating 15,675+ leads with an average CPL of AED 6.16.
                   </p>
 
                   {/* Brand tags */}
@@ -354,13 +354,13 @@ export default function App() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
-                      href="https://wa.me/971502315266"
+                      href="https://viber.click/639499315451"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group px-7 py-3.5 bg-zinc-900 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-zinc-700 transition-all text-sm"
                     >
                       <MessageCircle className="w-4 h-4" />
-                      WhatsApp Me
+                      Viber Me
                     </a>
                     <a
                       href="#work"
@@ -749,11 +749,11 @@ export default function App() {
                   <a href="mailto:5.paulandrefutol@gmail.com" className="p-3 rounded-full border border-zinc-200 hover:bg-zinc-50 transition-all">
                     <Mail className="w-5 h-5" />
                   </a>
-                  <a href="tel:+971502315266" className="p-3 rounded-full border border-zinc-200 hover:bg-zinc-50 transition-all">
+                  <a href="tel:+639499315451" className="p-3 rounded-full border border-zinc-200 hover:bg-zinc-50 transition-all">
                     <Phone className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://wa.me/971502315266"
+                    href="https://viber.click/639499315451"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-full border border-zinc-200 hover:bg-zinc-50 transition-all"
@@ -769,7 +769,7 @@ export default function App() {
                   <span className="text-zinc-900 font-semibold">every lead is captured, followed up, and tracked to a closed sale.</span>
                 </p>
                 <p>
-                  Based in Dubai, currently managing <span className="text-zinc-900 font-semibold">6 brands across UAE, Australia, and New Zealand</span> — planning, producing, and publishing all social content while running AED 96K+ in Meta Ads simultaneously.
+                  Based in the Philippines, currently managing <span className="text-zinc-900 font-semibold">6 brands across UAE, Australia, and New Zealand</span> — planning, producing, and publishing all social content while running AED 96K+ in Meta Ads simultaneously.
                 </p>
                 <p className="text-base sm:text-lg">
                   If you're getting leads but not converting them, or running ads but not tracking what works — that's exactly what I fix.
@@ -811,13 +811,13 @@ export default function App() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
                 <a
-                  href="https://wa.me/971502315266"
+                  href="https://viber.click/639499315451"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group px-8 py-4 bg-white text-zinc-900 rounded-full font-semibold flex items-center gap-3 hover:bg-zinc-100 transition-all text-base"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  WhatsApp Me
+                  Viber Me
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
@@ -829,12 +829,12 @@ export default function App() {
                 </a>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-zinc-500 text-sm">
-                <a href="tel:+971502315266" className="flex items-center gap-2 hover:text-white transition-colors">
+                <a href="tel:+639499315451" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Phone className="w-4 h-4" />
-                  +971 50 231 5266
+                  +63 949 931 5451
                 </a>
                 <span className="hidden sm:block">·</span>
-                <span>Dubai, UAE · Available for Remote</span>
+                <span>Philippines · Available for Remote</span>
                 <span className="hidden sm:block">·</span>
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -853,9 +853,8 @@ export default function App() {
           <p>© 2026 Paul Andre Futol. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
             <a href="https://www.linkedin.com/in/paul-andre-futol-01b7a1253/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">LinkedIn</a>
-            <a href="https://www.instagram.com/gilanimobilitydubai/" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">Instagram</a>
             <a href="https://drive.google.com/drive/folders/1z15Ce8WGwX-rbhyfYy6WGdud0Vy8pMOb" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">Portfolio</a>
-            <a href="https://wa.me/971502315266" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">WhatsApp</a>
+            <a href="https://viber.click/639499315451" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">Viber</a>
           </div>
         </div>
       </footer>
