@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import paulPort from '../paul_port.png';
-import resumePdf from '../Paul_Andre_Futol_Resume_Final.pdf';
+import resumePdf from '../Paul_Futol_Resume_v2.pdf';
 import {
   ArrowRight,
   BarChart3,
@@ -289,21 +289,13 @@ export default function App() {
             <a href="#work"      className="hover:text-zinc-900 transition-colors">Work</a>
             <a href="#services"  className="hover:text-zinc-900 transition-colors">Services</a>
             <a href="#about"     className="hover:text-zinc-900 transition-colors">About</a>
-            <a
-              href="https://viber.click/639499315451"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-zinc-900 text-white rounded-full hover:bg-zinc-700 transition-all text-sm flex items-center gap-2"
-            >
-              <MessageCircle className="w-3.5 h-3.5" />
-              Viber Me
-            </a>
           </div>
           <a
             href="https://viber.click/639499315451"
             target="_blank"
             rel="noopener noreferrer"
-            className="md:hidden px-4 py-2 bg-zinc-900 text-white rounded-full text-xs font-semibold uppercase tracking-wider"
+            className="hidden md:hidden px-4 py-2 bg-zinc-900 text-white rounded-full text-xs font-semibold uppercase tracking-wider"
+            aria-hidden="true"
           >
             Contact
           </a>
@@ -326,20 +318,19 @@ export default function App() {
                   className="max-w-xl"
                 >
                   <span className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-[0.24em] mb-5 sm:mb-6">
-                    Social Media &amp; Marketing Specialist · Philippines
+                    Digital Marketing Specialist · Email · Paid Media · CRM
                   </span>
 
                   <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-bold tracking-tight leading-[0.95] mb-5 sm:mb-7 text-balance">
-                    Marketing systems that bring in leads — and turn them into{' '}
-                    <span className="text-zinc-400">customers.</span>
+                    Digital marketing that drive leads, engagement, and growth.
                   </h1>
 
                   <p className="text-base sm:text-lg text-zinc-500 leading-relaxed mb-4 sm:mb-5">
-                    I help businesses run ads, automate lead follow-up, and track performance so{' '}
-                    <span className="text-zinc-900 font-semibold">nothing slips through the cracks.</span>{' '}
-                    Previously managed{' '}
-                    <span className="text-zinc-900 font-semibold">6 brands across UAE, Australia, and New Zealand</span>{' '}
-                    — generating 15,675+ leads with an average CPL of AED 6.16.
+                    I help businesses build and optimize digital marketing campaigns across{' '}
+                    <span className="text-zinc-900 font-semibold">email, SMS, paid media, CRM, and social media.</span>{' '}
+                    With 4+ years of experience, I&apos;ve managed campaigns for brands across the{' '}
+                    <span className="text-zinc-900 font-semibold">US, UAE, Australia, and New Zealand</span>{' '}
+                    — including 15,675+ leads generated through paid media and 100K+ email subscribers managed.
                   </p>
 
                   {/* Brand tags */}
@@ -353,11 +344,11 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <a
+                    <a className="hidden"
                       href="https://viber.click/639499315451"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group px-7 py-3.5 bg-zinc-900 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-zinc-700 transition-all text-sm"
+                      //className="group px-7 py-3.5 bg-zinc-900 text-white rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-zinc-700 transition-all text-sm"
                     >
                       <MessageCircle className="w-4 h-4" />
                       Viber Me
@@ -370,7 +361,7 @@ export default function App() {
                     </a>
                     <a
                       href={resumePdf}
-                      download="Paul_Andre_Futol_Resume_Final.pdf"
+                      download="Paul_Futol_Resume_v2.pdf"
                       className="px-7 py-3.5 border border-zinc-200 rounded-full font-semibold flex items-center justify-center hover:bg-zinc-50 transition-all text-sm"
                     >
                       ↓ Download CV
@@ -793,7 +784,7 @@ export default function App() {
         </section>
 
         {/* ── CONTACT ── */}
-        <section id="contact" className="py-24 sm:py-32 lg:py-40 px-4 sm:px-6 bg-zinc-900 text-white">
+        <section id="contact" className="hidden" aria-hidden="true">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
@@ -848,7 +839,7 @@ export default function App() {
       </main>
 
       {/* ── FOOTER ── */}
-      <footer className="py-10 sm:py-12 px-4 sm:px-6 border-t border-zinc-100">
+      <footer className="hidden" aria-hidden="true">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-center md:text-left text-sm text-zinc-400 font-medium">
           <p>© 2026 Paul Andre Futol. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
